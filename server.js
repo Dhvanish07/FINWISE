@@ -30,7 +30,7 @@ app.post("/chat", async (req, res) => {
             return res.status(400).json({ error: "Message is required" });
         }
 
-        const apiKey = process.env.GOOGLE_API_KEY || 'YOUR GEMINI API KET HERE';
+        const apiKey = process.env.GOOGLE_API_KEY || 'YOUR GEMINI API KEY HERE';
         const genAI = new GoogleGenerativeAI(apiKey);
         const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
 
@@ -119,4 +119,5 @@ app.get('/', (req, res) => {
 
 app.listen(PORT, () => {
     console.log(`✅ Finance Chatbot Server running on PORT ${PORT}`);
+
 });
